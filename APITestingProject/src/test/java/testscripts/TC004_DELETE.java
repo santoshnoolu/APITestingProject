@@ -18,4 +18,6 @@ Response res=req.request(Method.DELETE,"/api/users/2");
 System.out.println(res.asString());
 Assert.assertEquals(res.getStatusCode(), 204);
 }
+
+
 }

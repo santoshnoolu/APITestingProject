@@ -16,6 +16,7 @@ public class TC001_GET_ListUsers {
 		RequestSpecification req= RestAssured.given();
 		Response rs= req.request(Method.GET,"/api/users?page=2");
 		System.out.println(rs.asString());
+		System.out.println(rs.body().asString());
 		Assert.assertEquals(rs.getContentType(),"application/json; charset=utf-8");
 		Assert.assertEquals(rs.getStatusCode(),200);
 		Assert.assertEquals(rs.getHeader("content-encoding"),"gzip");

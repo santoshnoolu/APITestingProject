@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="Testscripts.TC002_POST_RegisterFail">
+      <class name="testscripts.TC001_GET">
         <methods>
-          <include name="test"/>
+          <include name="test1"/>
         </methods>
-      </class> <!-- Testscripts.TC002_POST_RegisterFail -->
+      </class> <!-- testscripts.TC001_GET -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

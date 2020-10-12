@@ -17,6 +17,8 @@ public class TC001_GET_Singleuser {
 		System.out.println(res.asString());
 		System.out.println(res.body().jsonPath().getInt("data.id"));
 		System.out.println(res.body().jsonPath().getString("data.email"));
+		
 	}
+
 
 }

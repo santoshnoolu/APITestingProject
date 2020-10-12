@@ -6,10 +6,13 @@ import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
+
 import junit.framework.Assert;
 
 public class TC001_GET {
-	@Test
+	
 	public void test()
 	{
 		RestAssured.baseURI="http://parabank.parasoft.com/parabank/services/bank/customers/12212/";
@@ -23,6 +26,23 @@ public class TC001_GET {
 		Assert.assertEquals(rs.getStatusLine(), "HTTP/1.1 200 ");
 		Assert.assertEquals(rs.getContentType(), "application/xml");
 		
+	}
+	
+	@Test
+	public void test1()
+	{
+		given()
+		.baseUri("http://parabank.parasoft.com/parabank/services/bank/customers/12212/")
+		.when()
+		.request(Method.GET)
+		.then()
+		.statusCode(200)
+		.header("Content-Type", "application/xml")
+		.body("customer.firstName",equalTo("John"))
+		.body("customer.address.zipCode",equalTo("90210"))
+		.log()
+		.all();
+	
 	}
 
 }

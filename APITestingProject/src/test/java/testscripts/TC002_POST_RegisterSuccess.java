@@ -24,6 +24,7 @@ public class TC002_POST_RegisterSuccess {
 		req.body(reqparam.toJSONString());
 		Response res= req.request(Method.POST,"/api/register");
 		System.out.println(res.asString());
+		System.out.println(res.body().jsonPath().get("id"));
 		Assert.assertEquals(res.getStatusCode(),200);
 		
 	}
